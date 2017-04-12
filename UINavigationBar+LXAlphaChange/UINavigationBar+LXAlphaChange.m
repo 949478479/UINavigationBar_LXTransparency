@@ -58,10 +58,10 @@
 	id<UIViewControllerTransitionCoordinator> transitionCoordinator = self.lx_viewController.transitionCoordinator;
 	if (transitionCoordinator) {
 		[transitionCoordinator animateAlongsideTransitionInView:self animation:^(id context) {
-			[[self lx_barBackgroundView] setAlpha:alpha];
+			[[self lx_backgroundView] setAlpha:alpha];
 		} completion:nil];
 	} else {
-		[[self lx_barBackgroundView] setAlpha:alpha];
+		[[self lx_backgroundView] setAlpha:alpha];
 	}
 
 	objc_setAssociatedObject(self, @selector(lx_lastSetAlpha), @(alpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -71,7 +71,7 @@
 
 - (CGFloat)lx_currentAlpha
 {
-	return [[self lx_barBackgroundView] alpha];
+	return [[self lx_backgroundView] alpha];
 }
 
 - (CGFloat)lx_lastSetAlpha
@@ -86,10 +86,10 @@
 	id<UIViewControllerTransitionCoordinator> transitionCoordinator = self.lx_viewController.transitionCoordinator;
 	if (transitionCoordinator) {
 		[transitionCoordinator animateAlongsideTransitionInView:self animation:^(id context) {
-			[[self lx_barBackgroundView] setAlpha:1.0];
+			[[self lx_backgroundView] setAlpha:1.0];
 		} completion:nil];
 	} else {
-		[[self lx_barBackgroundView] setAlpha:1.0];
+		[[self lx_backgroundView] setAlpha:1.0];
 	}
 }
 
@@ -104,9 +104,12 @@
 	return (UIViewController *)responder;
 }
 
-- (UIView *)lx_barBackgroundView
+- (UIView *)lx_backgroundView
 {
-	return [self valueForKey:@"barBackgroundView"];
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_9_x_Max) {
+        return [self valueForKey:@"barBackgroundView"];
+    }
+    return [self valueForKey:@"backgroundView"];
 }
 
 @end
