@@ -13,11 +13,11 @@
 		0065E1181E68AC39009835EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0065E1161E68AC39009835EE /* Main.storyboard */; };
 		0065E11A1E68AC39009835EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0065E1191E68AC39009835EE /* Assets.xcassets */; };
 		0065E11D1E68AC39009835EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0065E11B1E68AC39009835EE /* LaunchScreen.storyboard */; };
-		0065E12A1E68AE94009835EE /* UINavigationBar+LXAlphaChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 0065E1291E68AE94009835EE /* UINavigationBar+LXAlphaChange.m */; };
+		3EDEDFFE1EE2EE170091EA6B /* UINavigationBar+LXAlphaAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDEDFFD1EE2EE170091EA6B /* UINavigationBar+LXAlphaAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0065E10A1E68AC39009835EE /* LXNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0065E10A1E68AC39009835EE /* LXNavigationBarAlphaAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXNavigationBarAlphaAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0065E10E1E68AC39009835EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0065E1101E68AC39009835EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0065E1111E68AC39009835EE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,8 +27,8 @@
 		0065E1191E68AC39009835EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0065E11C1E68AC39009835EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0065E11E1E68AC39009835EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0065E1281E68AE94009835EE /* UINavigationBar+LXAlphaChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+LXAlphaChange.h"; sourceTree = "<group>"; };
-		0065E1291E68AE94009835EE /* UINavigationBar+LXAlphaChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+LXAlphaChange.m"; sourceTree = "<group>"; };
+		3EDEDFFC1EE2EE170091EA6B /* UINavigationBar+LXAlphaAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+LXAlphaAnimation.h"; sourceTree = "<group>"; };
+		3EDEDFFD1EE2EE170091EA6B /* UINavigationBar+LXAlphaAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+LXAlphaAnimation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,8 +45,8 @@
 		0065E1011E68AC38009835EE = {
 			isa = PBXGroup;
 			children = (
-				0065E1271E68AE94009835EE /* UINavigationBar+LXAlphaChange */,
-				0065E10C1E68AC39009835EE /* LXNavigationBar */,
+				3EDEDFFB1EE2EE170091EA6B /* UINavigationBar+LXAlphaAnimation */,
+				0065E10C1E68AC39009835EE /* LXNavigationBarAlphaAnimation */,
 				0065E10B1E68AC39009835EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		0065E10B1E68AC39009835EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0065E10A1E68AC39009835EE /* LXNavigationBar.app */,
+				0065E10A1E68AC39009835EE /* LXNavigationBarAlphaAnimation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0065E10C1E68AC39009835EE /* LXNavigationBar */ = {
+		0065E10C1E68AC39009835EE /* LXNavigationBarAlphaAnimation */ = {
 			isa = PBXGroup;
 			children = (
 				0065E1101E68AC39009835EE /* AppDelegate.h */,
@@ -72,7 +72,7 @@
 				0065E11E1E68AC39009835EE /* Info.plist */,
 				0065E10D1E68AC39009835EE /* Supporting Files */,
 			);
-			path = LXNavigationBar;
+			path = LXNavigationBarAlphaAnimation;
 			sourceTree = "<group>";
 		};
 		0065E10D1E68AC39009835EE /* Supporting Files */ = {
@@ -83,21 +83,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0065E1271E68AE94009835EE /* UINavigationBar+LXAlphaChange */ = {
+		3EDEDFFB1EE2EE170091EA6B /* UINavigationBar+LXAlphaAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				0065E1281E68AE94009835EE /* UINavigationBar+LXAlphaChange.h */,
-				0065E1291E68AE94009835EE /* UINavigationBar+LXAlphaChange.m */,
+				3EDEDFFC1EE2EE170091EA6B /* UINavigationBar+LXAlphaAnimation.h */,
+				3EDEDFFD1EE2EE170091EA6B /* UINavigationBar+LXAlphaAnimation.m */,
 			);
-			path = "UINavigationBar+LXAlphaChange";
+			path = "UINavigationBar+LXAlphaAnimation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0065E1091E68AC39009835EE /* LXNavigationBar */ = {
+		0065E1091E68AC39009835EE /* LXNavigationBarAlphaAnimation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0065E1211E68AC39009835EE /* Build configuration list for PBXNativeTarget "LXNavigationBar" */;
+			buildConfigurationList = 0065E1211E68AC39009835EE /* Build configuration list for PBXNativeTarget "LXNavigationBarAlphaAnimation" */;
 			buildPhases = (
 				0065E1061E68AC39009835EE /* Sources */,
 				0065E1071E68AC39009835EE /* Frameworks */,
@@ -107,9 +107,9 @@
 			);
 			dependencies = (
 			);
-			name = LXNavigationBar;
+			name = LXNavigationBarAlphaAnimation;
 			productName = LXNavigationBar;
-			productReference = 0065E10A1E68AC39009835EE /* LXNavigationBar.app */;
+			productReference = 0065E10A1E68AC39009835EE /* LXNavigationBarAlphaAnimation.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +128,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0065E1051E68AC38009835EE /* Build configuration list for PBXProject "LXNavigationBar" */;
+			buildConfigurationList = 0065E1051E68AC38009835EE /* Build configuration list for PBXProject "LXNavigationBarAlphaAnimation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -141,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0065E1091E68AC39009835EE /* LXNavigationBar */,
+				0065E1091E68AC39009835EE /* LXNavigationBarAlphaAnimation */,
 			);
 		};
 /* End PBXProject section */
@@ -165,9 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0065E1151E68AC39009835EE /* TableViewController.m in Sources */,
+				3EDEDFFE1EE2EE170091EA6B /* UINavigationBar+LXAlphaAnimation.m in Sources */,
 				0065E1121E68AC39009835EE /* AppDelegate.m in Sources */,
 				0065E10F1E68AC39009835EE /* main.m in Sources */,
-				0065E12A1E68AE94009835EE /* UINavigationBar+LXAlphaChange.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6U2XW736FX;
-				INFOPLIST_FILE = LXNavigationBar/Info.plist;
+				INFOPLIST_FILE = LXNavigationBarAlphaAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hereafter.LXNavigationBar;
@@ -299,7 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6U2XW736FX;
-				INFOPLIST_FILE = LXNavigationBar/Info.plist;
+				INFOPLIST_FILE = LXNavigationBarAlphaAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hereafter.LXNavigationBar;
@@ -310,7 +310,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0065E1051E68AC38009835EE /* Build configuration list for PBXProject "LXNavigationBar" */ = {
+		0065E1051E68AC38009835EE /* Build configuration list for PBXProject "LXNavigationBarAlphaAnimation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0065E11F1E68AC39009835EE /* Debug */,
@@ -319,7 +319,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0065E1211E68AC39009835EE /* Build configuration list for PBXNativeTarget "LXNavigationBar" */ = {
+		0065E1211E68AC39009835EE /* Build configuration list for PBXNativeTarget "LXNavigationBarAlphaAnimation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0065E1221E68AC39009835EE /* Debug */,

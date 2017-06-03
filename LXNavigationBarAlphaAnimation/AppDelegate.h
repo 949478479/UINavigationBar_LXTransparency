@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  LXNavigationBar
+//  LXNavigationBarAlphaAnimation
 //
 //  Created by 从今以后 on 17/3/3.
 //  Copyright © 2017年 从今以后. All rights reserved.
