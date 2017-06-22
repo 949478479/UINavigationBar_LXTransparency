@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--标题标题-->
+        <!--标题-->
         <scene sceneID="b8O-1h-Jby">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="leS-se-Aus" customClass="TableViewController" sceneMemberID="viewController">
@@ -193,7 +193,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="标题标题" id="XHn-3w-fOD">
+                    <navigationItem key="navigationItem" title="标题" id="XHn-3w-fOD">
                         <barButtonItem key="backBarButtonItem" title="返回" id="4SD-nU-qcE"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LFK-yj-wDA">
                             <connections>
@@ -206,7 +206,7 @@
             </objects>
             <point key="canvasLocation" x="5055" y="-390.84507042253523"/>
         </scene>
-        <!--View Controller-->
+        <!--二级页面-->
         <scene sceneID="3Td-5D-tQk">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="AI7-Y5-g31" sceneMemberID="viewController">
@@ -219,6 +219,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="二级页面" id="oXd-iF-Z8i"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="to7-sW-UC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,7 +235,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>

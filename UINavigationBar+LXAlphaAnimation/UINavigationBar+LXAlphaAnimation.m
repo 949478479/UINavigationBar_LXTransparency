@@ -90,9 +90,9 @@
 
 - (void)lx_setAlpha:(CGFloat)alpha
 {
-	id<UIViewControllerTransitionCoordinator> transitionCoordinator = self.lx_viewController.transitionCoordinator;
+	id<UIViewControllerTransitionCoordinator> transitionCoordinator = [self lx_viewController].transitionCoordinator;
 	if (transitionCoordinator) {
-		[transitionCoordinator animateAlongsideTransitionInView:self animation:^(id context) {
+		[transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
 			[self lx_setBackgroundViewAlpha:alpha];
 		} completion:nil];
 	} else {
