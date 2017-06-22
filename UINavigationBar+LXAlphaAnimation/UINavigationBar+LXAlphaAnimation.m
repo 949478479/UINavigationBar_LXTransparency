@@ -34,20 +34,17 @@
 	}
 }
 
-- (UIScrollView *)lx_scrollView
-{
+- (UIScrollView *)lx_scrollView {
 	return objc_getAssociatedObject(self, _cmd);
 }
 
 #pragma mark - 设置完全透明时的偏移量
 
-- (void)lx_setFullyTransparentOffset:(CGFloat)offset
-{
+- (void)lx_setFullyTransparentOffset:(CGFloat)offset {
 	objc_setAssociatedObject(self, @selector(lx_fullyTransparentOffset), @(offset), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)lx_fullyTransparentOffset
-{
+- (CGFloat)lx_fullyTransparentOffset {
 	return [objc_getAssociatedObject(self, _cmd) doubleValue];
 }
 
@@ -69,13 +66,11 @@
 
 #pragma mark - 获取 alpha
 
-- (CGFloat)lx_currentAlpha
-{
+- (CGFloat)lx_currentAlpha {
 	return [[self lx_backgroundView] alpha];
 }
 
-- (CGFloat)lx_lastSetAlpha
-{
+- (CGFloat)lx_lastSetAlpha {
 	return [objc_getAssociatedObject(self, _cmd) doubleValue];
 }
 
@@ -143,8 +138,7 @@
 	[_navigationBar lx_setAlpha:alpha];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
 	[_scrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
