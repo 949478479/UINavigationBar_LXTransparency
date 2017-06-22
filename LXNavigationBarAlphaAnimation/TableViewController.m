@@ -19,6 +19,10 @@
 {
 	[super viewDidLoad];
 
+	if (@available(iOS 11.0, *)) {
+		self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+	}
+
 	self.navigationBar = self.navigationController.navigationBar;
 
 	// 关联 scroll view 就可以自动调整 alpha

@@ -9,7 +9,7 @@
 
 @interface UINavigationBar (LXAlphaAnimation)
 
-/// 设置关联的 scroll view，通过 KVO 监测 contentOffset 来自动调整 alpha
+/// 设置强引用关联的 scroll view，通过 KVO 监测 contentOffset 来自动调整 alpha
 - (void)lx_setScrollView:(UIScrollView *)scrollView;
 - (UIScrollView *)lx_scrollView;
 
