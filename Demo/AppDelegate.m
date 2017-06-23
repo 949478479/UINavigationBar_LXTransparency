@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  LXNavigationBarAlphaAnimation
+//  Demo
 //
-//  Created by 从今以后 on 17/3/3.
+//  Created by 从今以后 on 2017/6/23.
 //  Copyright © 2017年 从今以后. All rights reserved.
 //
 
@@ -17,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
-	self.window.backgroundColor = [UIColor whiteColor];
 	return YES;
 }
 

@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+LXAlphaAnimation.m
+//  UINavigationBar+LXTransparency.m
 //
 //  Created by 从今以后 on 17/3/2.
 //  Copyright © 2017年 从今以后. All rights reserved.
@@ -7,9 +7,9 @@
 
 #import <objc/message.h>
 #import <objc/runtime.h>
-#import "UINavigationBar+LXAlphaAnimation.h"
+#import "UINavigationBar+LXTransparency.h"
 
-@interface UINavigationBar (_LXAlphaAnimation)
+@interface UINavigationBar (_LXTransparency)
 - (UIViewController *)lx_viewController;
 @end
 

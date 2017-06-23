@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+LXAlphaAnimation.h
+//  UINavigationBar+LXTransparency.h
 //
 //  Created by 从今以后 on 17/3/2.
 //  Copyright © 2017年 从今以后. All rights reserved.
@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationBar (LXAlphaAnimation)
+@interface UINavigationBar (LXTransparency)
 
 /// 设置强引用关联的 scroll view，通过 KVO 监测 contentOffset 来自动调整 alpha
 - (void)lx_setScrollView:(UIScrollView *)scrollView;

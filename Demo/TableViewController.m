@@ -7,7 +7,7 @@
 //
 
 #import "TableViewController.h"
-#import "UINavigationBar+LXAlphaAnimation.h"
+#import "UINavigationBar+LXTransparency.h"
 
 @interface TableViewController ()
 @property (nonatomic) UINavigationBar *navigationBar;
