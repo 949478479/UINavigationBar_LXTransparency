@@ -7,11 +7,13 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UINavigationBar (LXTransparency)
 
 /// 设置强引用关联的 scroll view，通过 KVO 监测 contentOffset 来自动调整 alpha
-- (void)lx_setScrollView:(UIScrollView *)scrollView;
-- (UIScrollView *)lx_scrollView;
+- (void)lx_setScrollView:(nullable UIScrollView *)scrollView;
+- (nullable UIScrollView *)lx_scrollView;
 
 /// 设置完全透明时 scroll view 偏移量，仅在关联了 scroll view 时有效
 - (void)lx_setFullyTransparentOffset:(CGFloat)offset;
@@ -30,3 +32,5 @@
 - (void)lx_resetAlpha;
 
 @end
+
+NS_ASSUME_NONNULL_END
