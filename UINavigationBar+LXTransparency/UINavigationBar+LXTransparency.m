@@ -45,7 +45,14 @@
 		return;
 	}
 
-	CGFloat alpha = (_scrollView.contentOffset.y + _scrollView.contentInset.top) / [_navigationBar lx_fullyTransparentOffset];
+    CGFloat offsetY = _scrollView.contentOffset.y + _scrollView.contentInset.top;
+    if (@available(iOS 11.0, *)) {
+        if (_scrollView.contentInsetAdjustmentBehavior != UIScrollViewContentInsetAdjustmentNever) {
+            offsetY = _scrollView.contentOffset.y + _scrollView.adjustedContentInset.top;
+        }
+    }
+
+	CGFloat alpha = offsetY / [_navigationBar lx_fullyTransparentOffset];
 	alpha = fmax(0, fmin(alpha, 1));
 	[_navigationBar lx_setAlpha:alpha];
 }
@@ -101,13 +108,13 @@
 	objc_setAssociatedObject(self, @selector(lx_lastSetAlpha), @(alpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-// 设置 alpha 必然在主线程，因此同一时间最多只会有一个导航栏调用此方法
-static BOOL isMyself = NO;
+// 设置 alpha 在主线程，因此同一时间最多只会有一个导航栏调用此方法
+static BOOL _shouldSetAlpha = NO;
 - (void)lx_setBackgroundViewAlpha:(CGFloat)alpha
 {
-	isMyself = YES;
+	_shouldSetAlpha = YES;
 	[[self lx_backgroundView] setAlpha:alpha];
-	isMyself = NO;
+	_shouldSetAlpha = NO;
 }
 
 #pragma mark - 获取 alpha
@@ -158,9 +165,12 @@ static BOOL isMyself = NO;
 		if (@available(iOS 11.0, *)) {
 			backgroundView = [self valueForKeyPath:@"visualProvider.backgroundView"];
 			// 在 iOS 11，测试发现在 viewWillAppear: 之类的方法中改变 alpha 后会被重置为 1.0，故重写 setAlpha: 阻止这种行为。
-			Class class = objc_allocateClassPair([backgroundView class], "_LXBarBackground", 0);
-			class_addMethod(class, @selector(setAlpha:), (IMP)imp_setAlpha, "v@:d");
-			objc_registerClassPair(class);
+            Class class = objc_lookUpClass("_LXBarBackground");
+            if (class == nil) {
+                class = objc_allocateClassPair([backgroundView class], "_LXBarBackground", 0);
+                class_addMethod(class, @selector(setAlpha:), (IMP)imp_setAlpha, "v@:d");
+                objc_registerClassPair(class);
+            }
 			object_setClass(backgroundView, class);
 		} else if (@available(iOS 10.0, *)) {
 			backgroundView = [self valueForKey:@"barBackgroundView"];
@@ -174,7 +184,7 @@ static BOOL isMyself = NO;
 
 static void imp_setAlpha(id self, SEL _cmd, CGFloat alpha)
 {
-	if (isMyself) {
+	if (_shouldSetAlpha) {
 		struct objc_super super = { self, [self superclass] };
 		((void(*)(struct objc_super *, SEL, CGFloat))objc_msgSendSuper)(&super, @selector(setAlpha:), alpha);
 	}
