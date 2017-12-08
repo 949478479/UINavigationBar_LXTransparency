@@ -27,7 +27,7 @@
 
 	// 关联 scroll view 就可以自动调整 alpha
 	[self.navigationBar lx_setScrollView:self.tableView];
-	[self.navigationBar lx_setFullyTransparentOffset:CGRectGetHeight(self.tableView.tableHeaderView.bounds) - 64];
+	[self.navigationBar lx_setFullyTransparentOffset:CGRectGetHeight(self.tableView.tableHeaderView.bounds) - CGRectGetMaxY(self.navigationBar.frame)];
 }
 
 - (void)viewWillAppear:(BOOL)animated

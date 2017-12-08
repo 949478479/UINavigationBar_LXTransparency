@@ -168,10 +168,18 @@ static BOOL _shouldSetAlpha = NO;
             Class class = objc_lookUpClass("_LXBarBackground");
             if (class == nil) {
                 class = objc_allocateClassPair([backgroundView class], "_LXBarBackground", 0);
-                class_addMethod(class, @selector(setAlpha:), (IMP)imp_setAlpha, "v@:d");
+                SEL sel = @selector(setAlpha:);
+                IMP imp = imp_implementationWithBlock(^(id self, CGFloat alpha){
+                    if (_shouldSetAlpha) {
+                        struct objc_super super = { self, [self superclass] };
+                        ((void(*)(struct objc_super *, SEL, CGFloat))objc_msgSendSuper)(&super, sel, alpha);
+                    }
+                });
+                const char *types = method_getTypeEncoding(class_getInstanceMethod(class, sel));
+                class_addMethod(class, sel, imp, types);
                 objc_registerClassPair(class);
             }
-			object_setClass(backgroundView, class);
+            object_setClass(backgroundView, class);
 		} else if (@available(iOS 10.0, *)) {
 			backgroundView = [self valueForKey:@"barBackgroundView"];
 		} else {
@@ -180,14 +188,6 @@ static BOOL _shouldSetAlpha = NO;
 		objc_setAssociatedObject(self, _cmd, backgroundView, OBJC_ASSOCIATION_ASSIGN);
 	}
 	return backgroundView;
-}
-
-static void imp_setAlpha(id self, SEL _cmd, CGFloat alpha)
-{
-	if (_shouldSetAlpha) {
-		struct objc_super super = { self, [self superclass] };
-		((void(*)(struct objc_super *, SEL, CGFloat))objc_msgSendSuper)(&super, @selector(setAlpha:), alpha);
-	}
 }
 
 @end
